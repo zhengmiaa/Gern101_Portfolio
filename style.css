@@ -1,15 +1,17 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    font-size: 20px;
+    line-height: 2;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 0;
+    background-color: #ffce00;
+    color: #158622;
+    padding: 5px 0;
     text-align: center;
 }
 
@@ -20,14 +22,24 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin-right: 15px;
 }
 
 nav ul li a {
-    color: white;
+    color: white; /* Change text color to white for contrast */
     text-decoration: none;
     font-weight: bold;
+    background-color: #158622; /* Background color for the button */
+    padding: 10px 20px; /* Padding inside the buttons */
+    border-radius: 5px; /* Rounded corners */
+    border: 2px solid transparent; /* Optional: Make it look more button-like */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Add a transition for hover effect */
+}
+
+nav ul li a:hover {
+    background-color: #0e6217; /* Darker background color on hover */
+    border-color: #fff; /* Add border on hover */
 }
 
 main {
@@ -41,4 +53,60 @@ h1, h2, h3 {
 ul {
     list-style-type: square;
     margin-top: 10px;
+}
+
+.gern {
+    color: #dd0000;
+    font-weight: bold;
+}
+.container {
+    display: flex; /* Use flexbox to create a row layout */
+    margin: 20px; /* Add some margin around the container */
+}
+
+.content {
+    flex: 2.5; /* Take up 3 parts of the available space */
+    margin-right: 20px; /* Space between the content and vocab list */
+}
+
+.vocab {
+    flex: 1.5; /* Take up 1 part of the available space */
+    background-color: #f9f9f9; /* Optional: Light background for the vocab list */
+    padding: 10px; /* Padding around the vocab list */
+    border: 1px solid #ddd; /* Optional: Border around the vocab list */
+    line-height: 1.5;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 300px; /* Width of the tooltip */
+    background-color: #555; /* Background color of the tooltip */
+    color: #fff; /* Text color */
+    font-size: 15px;
+    text-align: center; /* Center the text */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding inside the tooltip */
+    position: absolute; /* Position it relative to the tooltip parent */
+    z-index: 1; /* Make sure it appears above other elements */
+    left: 150%; /* Position to the right of the word */
+    top: 50%; /* Center vertically with respect to the word */
+    margin-top: -10px; /* Adjust for vertical centering */
+    opacity: 0; /* Hide the tooltip */
+    transition: opacity 0.3s; /* Fade in effect */
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1; /* Show the tooltip on hover */
+}
+.tooltip .tooltiptext img {
+    max-width: 280px; /* Adjust max width as needed */
+    display: block; /* Ensure the image is treated as a block element */
+    margin: 0 auto; /* Center the image */
 }
